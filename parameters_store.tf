@@ -56,3 +56,4 @@ resource "aws_ssm_parameter" "subnet_database_1c" {
   name = format("/s%/subnet_database_1c", var.project_name)
   type = "String"
   value = aws_vpc.subnet_database_1c.id
+}
