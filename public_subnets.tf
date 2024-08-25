@@ -41,3 +41,18 @@ resource "aws_route" "public_access" {
   destination_cidr_block    = "0.0.0.0/0"
   gateway_id                = aws_internet_gateway.gw.id
 }
+
+resource "aws_route_table_associaton" "public_1a"{
+  subnet_id = aws_subnet.public_subnet_1a.id
+  route_table_id = ws_route_table.public_internet_access.id
+}
+
+resource "aws_route_table_associaton" "public_1b"{
+  subnet_id = aws_subnet.public_subnet_1b.id
+  route_table_id = ws_route_table.public_internet_access.id
+}
+
+resource "aws_route_table_associaton" "public_1c"{
+  subnet_id = aws_subnet.public_subnet_1c.id
+  route_table_id = ws_route_table.public_internet_access.id
+}
