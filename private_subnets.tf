@@ -27,3 +27,17 @@ resource "aws_subnet" "private_subnet_1c" {
     Name = format("%s-private-subnet-1c", var.project_name)
   }
 }
+
+resource "aws_route_table" "private_internet_access" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = format("%s-private", var.project_name)
+  }
+}
+
+resource "aws_route" "public_access" {
+  route_table_id         = aws_route_table.private_internet_access.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_nat_gateway.nat_1a.id
+}
