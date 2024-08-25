@@ -36,7 +36,7 @@ resource "aws_route_table" "private_internet_access" {
   }
 }
 
-resource "aws_route" "public_access" {
+resource "aws_route" "private_access" {
   route_table_id         = aws_route_table.private_internet_access.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_nat_gateway.nat_1a.id
