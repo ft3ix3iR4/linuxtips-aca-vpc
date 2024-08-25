@@ -43,6 +43,7 @@ resource "aws_route" "public_access" {
 }
 
 resource "aws_route_table_association" "public_1a" {
+<<<<<<< HEAD
   subnet_id      = aws_subnet.public_subnet_1a.id
   route_table_id = ws_route_table.public_internet_access.id
 }
@@ -55,4 +56,18 @@ resource "aws_route_table_association" "public_1b" {
 resource "aws_route_table_association" "public_1c" {
   subnet_id      = aws_subnet.public_subnet_1c.id
   route_table_id = ws_route_table.public_internet_access.id
+=======
+  subnet_id = aws_subnet.public_subnet_1a.id
+  route_table_id = aws_route_table.public_internet_access.id
+}
+
+resource "aws_route_table_association" "public_1b" {
+  subnet_id = aws_subnet.public_subnet_1b.id
+  route_table_id = aws_route_table.public_internet_access.id
+}
+
+resource "aws_route_table_association" "public_1c" {
+  subnet_id = aws_subnet.public_subnet_1c.id
+  route_table_id = aws_route_table.public_internet_access.id
+>>>>>>> 83ecd69cc98bf3567ad07e9123061a956ffa0d2c
 }
