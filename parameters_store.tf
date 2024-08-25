@@ -40,20 +40,20 @@ resource "aws_ssm_parameter" "public_subnet_1c" {
   value = aws_subnet.public_subnet_1c.id
 }
 
-resource "aws_ssm_parameter" "database_subnet_1a" {
-  name  = format("/%s/database_subnet_1a", var.project_name)
+resource "aws_ssm_parameter" "databases_subnet_1a" {
+  name  = format("/%s/databases_subnet_1a", var.project_name)
   type  = "String"
-  value = aws_subnet.database_subnet_1a.id
+  value = aws_subnet.databases_subnet_1a.id
 }
 
-resource "aws_ssm_parameter" "database_subnet_1b" {
-  name  = format("/%s/database_subnet_1b", var.project_name)
+resource "aws_ssm_parameter" "databases_subnet_1b" {
+  name  = format("/%s/databases_subnet_1b", var.project_name)
   type  = "String"
-  value = aws_subnet.database_subnet_1b.id
+  value = aws_subnet.databases_subnet_1b.id
 }
 
-resource "aws_ssm_parameter" "database_subnet_1c" {
-  name  = format("/%s/database_subnet_1c", var.project_name)
+resource "aws_ssm_parameter" "databases_subnet_1c" {
+  name  = format("/%s/databases_subnet_1c", var.project_name)
   type  = "String"
-  value = aws_subnet.database_subnet_1c.id
+  value = aws_subnet.databases_subnet_1c.id
 }
