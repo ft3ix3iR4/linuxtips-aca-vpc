@@ -31,10 +31,10 @@ resource "aws_nat_gateway" "nat_1b" {
   }
 }
 
-resource "aws_eip" "vpc_eip_lb" {
+resource "aws_eip" "vpc_eip_lc" {
   domain = "vpc"
   tags = {
-    Name = format("%s-eip-1b", var.project_name)
+    Name = format("%s-eip-1c", var.project_name)
   }
 }
 
